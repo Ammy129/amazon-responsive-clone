@@ -1,0 +1,86 @@
+.footer-wrapper {
+  background: #232f3e;
+  text-transform: capitalize;
+}
+
+.backToTop {
+  background: #37475a;
+  height: 48px;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+}
+.backToTop:hover {
+  background: #465971;
+}
+.links-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.links h3 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-size: 15px;
+}
+.links p {
+  color: #dddddd;
+  line-height: 2;
+  font-size: 14px;
+}
+.links p:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* LOWER */
+
+.lower-footer {
+  background: #131a22;
+  color: #dddddd;
+  width: 100%;
+}
+
+.lower-wrapper {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+.links small {
+  margin-top: 0.3rem;
+  color: #999999;
+  display: block;
+  font-size: 10px;
+  line-height: 1.2;
+  width: 90px;
+}
+
+.links small:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.copyright {
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  text-transform: lowercase;
+}
+
+@media screen and (max-width: 500px) {
+  .lower-footer {
+    display: none;
+  }
+}
