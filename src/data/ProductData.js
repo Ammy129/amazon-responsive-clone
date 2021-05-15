@@ -2,7 +2,7 @@ const ProductData = [
   {
     id: "1",
     title:
-      "Dell Inspiron 3501 15-inch FHD Laptop (11th Gen i5-1135G7/8GB/1TB HDD/256GB SSD/Win 10 + MS Office/2GB Graphics/Soft Mint)",
+      "dell inspiron 3501 15-inch FHD laptop (11th gen i5-1135G7/8GB/1TB HDD/256GB SSD/Win 10 + MS Office/2GB graphics/soft mint)",
     price: 64290,
     stars: 4,
     qty: 1,
@@ -10,7 +10,7 @@ const ProductData = [
   },
   {
     id: "2",
-    title: "New Apple iPhone 12 (128GB) - (Product) RED",
+    title: "new apple iphone 12 (128GB) - (Product) red",
     price: 83400,
     stars: 5,
     qty: 1,
@@ -19,7 +19,7 @@ const ProductData = [
   {
     id: "3",
     title:
-      "Zodo 8. 5 inch LCD E-Writer Electronic Writing Pad/Tablet Drawing Board (Paperless Memo Digital Tablet)  ",
+      "zodo 8. 5 inch LCD e-writer electronic writing pad/tablet drawing board (paperless memo digital tablet)  ",
     price: 250,
     stars: 3,
     qty: 1,
@@ -28,7 +28,7 @@ const ProductData = [
   {
     id: "4",
     title:
-      "OnePlus Band :1.1 Inch AMOLED Display, Dual-Color Band Design, Sleep Monitoring of Blood Oxygen Saturation (SpO2), 5ATM + IP68 Water & Dust Resistant(only Android Compatible Currently)",
+      "oneplus band :1.1 inch amoled display, dual-color band design, sleep monitoring of blood oxygen saturation (SpO2), 5ATM + IP68 water & dust resistant(only android compatible currently) watch",
     price: 2499,
     stars: 4,
     qty: 1,
@@ -37,7 +37,7 @@ const ProductData = [
   {
     id: "5",
     title:
-      "Spazy Case® 3 in 1 Charging Stand for Apple iPhone,Watch, Airpods, Qi Fast Charger Dock with USB Output,Wireless Charging Station Holder Compatible with iWatch Series 654321,Airpods/Airpods Pro",
+      "spazy case® 3 in 1 charging stand for apple iphone , watch , airpods, qi fast charger dock with USB output,wireless charging station holder compatible with iwatch series 654321,airpods / airpods pro",
     price: 1999,
     stars: 3,
     qty: 1,
@@ -46,7 +46,7 @@ const ProductData = [
   {
     id: "6",
     title:
-      "New Apple Watch Series 6 (GPS, 40mm) - Product(RED) - Aluminium Case with Product(RED) - Sport Band   ",
+      "new apple watch series 6 (GPS, 40mm) - product(RED) - aluminium case with product(RED) - sport band   ",
     price: 37900,
     stars: 4,
     qty: 1,

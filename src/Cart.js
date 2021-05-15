@@ -4,12 +4,13 @@ import "./css/Cart.css";
 import { DataContext } from "./Context";
 
 const Cart = () => {
-  const { cartItems, totalAmt, totalQty } = React.useContext(DataContext);
+  const { totalAmt, totalQty, filteredCartItems } =
+    React.useContext(DataContext);
 
   return (
     <section className="Cart-wrapper">
       <div className="cart-items-wrapper">
-        {cartItems.length === 0 && (
+        {filteredCartItems.length === 0 && (
           <div className="empty-cart">
             <h3>Your Amazon Cart is empty.</h3>
             <p>
@@ -21,10 +22,10 @@ const Cart = () => {
           </div>
         )}
 
-        {cartItems.length !== 0 && (
+        {filteredCartItems.length !== 0 && (
           <>
             <h2 className="cart-title">Shopping Cart</h2>
-            {cartItems.map(item => (
+            {filteredCartItems.map(item => (
               <SingleCartItem key={item.id} {...item} />
             ))}
             <footer className="cart-footer">

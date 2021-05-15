@@ -7,16 +7,19 @@ import InlineProductData from "./data/InlineProductData";
 import SingleInlineProduct from "./components/SingleInlineProduct";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation } from "swiper";
+import { DataContext } from "./Context";
 
 SwiperCore.use([Navigation]);
 
 const Home = () => {
+  const { filteredProducts } = React.useContext(DataContext);
+
   return (
     <section className="home-section">
       <Banner />
 
       <div className="product-wrapper">
-        {ProductData.map(data => (
+        {filteredProducts.map(data => (
           <SingleProduct key={data.id} {...data} />
         ))}
       </div>

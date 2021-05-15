@@ -13,10 +13,11 @@ import amazonLogo from "../amazon-2.svg";
 import HoverState from "./HoverState";
 
 const Navbar = () => {
-  const { totalQty } = React.useContext(DataContext);
+  const { totalQty ,searchValue,setSearchValue} = React.useContext(DataContext);
 
   const [openSidebar, setOpenSidebar] = useState(false);
   const [isHover, setIsHover] = useState(false);
+
 
   return (
     <nav className="navbar">
@@ -61,8 +62,8 @@ const Navbar = () => {
         </div>
       </div>
 
-      <form className="nav-form">
-        <input type="text" />
+      <form className="nav-form" onSubmit={e=>e.preventDefault()}>
+        <input type="text" value={searchValue} onChange={e=>setSearchValue(e.target.value)} />
         <div className="submit-btn">
           <SearchIcon />
         </div>

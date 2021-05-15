@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
+import { useLocation } from "react-router";
 import ProductData from "./data/ProductData";
 
 //create context
@@ -12,9 +13,13 @@ const getFromLocal = () => {
 };
 
 const DataProvider = ({ children }) => {
+  const { pathname } = useLocation();
   const [cartItems, setCartItems] = useState(getFromLocal());
   const [totalQty, setTotalQty] = useState(0);
   const [totalAmt, setTotalAmt] = useState(0);
+  const [searchValue, setSearchValue] = useState("");
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [filteredCartItems, setFilteredCartItems] = useState([]);
   const [itemDetail, setItemDetail] = useState({
     image: "",
     price: "",
@@ -71,6 +76,10 @@ const DataProvider = ({ children }) => {
   // delete from Cart
   const deleteItem = id => {
     setCartItems(prev => prev.filter(item => item.id !== id));
+
+    //change qty to 1
+    const deletedItem = ProductData.find(data => data.id === id);
+    deletedItem.qty = 1;
   };
 
   //getting item for product detail page
@@ -78,6 +87,42 @@ const DataProvider = ({ children }) => {
     const newItem = ProductData.find(data => data.id === id);
     setItemDetail(newItem);
   };
+
+  const filterProducts = () => {
+    //if search happn
+    if (searchValue) {
+      const searchLower = searchValue.toLowerCase();
+
+      // on Home page
+      if (pathname === "/") {
+        const temp = ProductData.filter(data =>
+          data.title.includes(searchLower)
+        );
+        setFilteredProducts(temp);
+      }
+
+      // on Cart page
+      else if (pathname === "/cart") {
+        const temp = cartItems.filter(data => data.title.includes(searchLower));
+        setFilteredCartItems(temp);
+      }
+    }
+
+    //nothing happn
+    else {
+      setFilteredProducts(ProductData);
+      setFilteredCartItems(cartItems);
+    }
+  };
+
+  useEffect(() => {
+    filterProducts();
+  }, [searchValue]);
+
+  useEffect(() => {
+    setSearchValue("");
+    filterProducts();
+  }, [pathname, cartItems]);
 
   return (
     <DataContext.Provider
@@ -90,6 +135,10 @@ const DataProvider = ({ children }) => {
         deleteItem,
         getItems,
         itemDetail,
+        searchValue,
+        setSearchValue,
+        filteredProducts,
+        filteredCartItems,
       }}
     >
       {children}
