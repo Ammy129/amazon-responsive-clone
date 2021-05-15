@@ -83,7 +83,7 @@ const Navbar = () => {
 
       <div className="return">
         <small>Returns</small>
-        <strong>& Orders</strong>
+        <strong>&& Orders</strong>
       </div>
 
       <Link to="/cart">
